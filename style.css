@@ -1,27 +1,20 @@
 :root {
     --primary: #2e7d32;
     --primary-light: #4caf50;
-    --primary-color: #2e7d32; /* Para compatibilidade */
     --secondary: #ffa000;
     --text: #333;
-    --text-dim: #666;
     --bg: #f4f7f6;
     --white: #ffffff;
-    --card-bg: #ffffff;
     --shadow: 0 4px 12px rgba(0,0,0,0.1);
     --transition: all 0.3s ease;
 }
 
 /* Modo Escuro */
 .dark-mode {
-    --bg: #121212;
-    --text: #e0e0e0;
-    --text-dim: #b0b0b0;
-    --white: #1e1e1e;
-    --card-bg: #1e1e1e;
+    --bg: #1a1a1a;
+    --text: #f0f0f0;
+    --white: #2d2d2d;
     --primary: #81c784;
-    --primary-color: #81c784;
-    --shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
 * {
@@ -31,7 +24,7 @@
 }
 
 body {
-    font-family: 'Poppins', 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
@@ -52,18 +45,12 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
     color: var(--primary);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
 .logo span {
@@ -90,13 +77,12 @@ nav {
 /* Hero Section */
 .hero {
     padding: 6rem 5%;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/tecnologia.jpg');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/tecnologia.jpg');
     background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
     border-radius: 0 0 50px 50px;
-    margin-bottom: 2rem;
 }
 
 .hero-content {
@@ -104,14 +90,13 @@ nav {
     margin: 0 auto;
 }
 
-.hero h1 {
-    font-size: 3.5rem;
+.welcome-badge {
     margin-bottom: 1.5rem;
-    font-weight: 800;
 }
 
-.hero h1 span {
-    color: var(--primary-light);
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .hero-btns {
@@ -123,32 +108,24 @@ nav {
 
 /* Botões */
 .btn {
-    padding: 0.8rem 2.5rem;
-    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
     border: none;
     background-color: var(--primary);
     color: white;
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: none;
     cursor: pointer;
     transition: var(--transition);
-    display: inline-block;
 }
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(46, 125, 50, 0.3);
+    box-shadow: 0 5px 15px rgba(46, 125, 50, 0.4);
 }
 
 .btn-alt {
-    background-color: transparent;
-    border: 2px solid var(--white);
-    color: var(--white);
-}
-
-.btn-alt:hover {
-    background-color: var(--white);
-    color: var(--primary);
+    background-color: var(--secondary);
 }
 
 /* Container e Grids */
@@ -160,125 +137,95 @@ nav {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
 .card {
-    background-color: var(--card-bg);
-    padding: 2.5rem;
-    border-radius: 24px;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
     box-shadow: var(--shadow);
     text-align: center;
     transition: var(--transition);
-    border: 1px solid rgba(0,0,0,0.05);
-}
-
-.dark-mode .card {
-    border: 1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: scale(1.03);
 }
 
-.card img {
-    width: 100%;
-    border-radius: 15px;
-    margin-bottom: 1.5rem;
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Intro Section */
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.stat-card {
+    background-color: var(--primary);
+    color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 /* Painel de Acessibilidade */
-.accessibility-panel, .controls {
+.accessibility-panel {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    z-index: 2000;
+    gap: 10px;
 }
 
-.accessibility-panel button, .control-btn {
-    width: 55px;
-    height: 55px;
+.accessibility-panel button {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     border: none;
     background-color: var(--white);
     color: var(--primary);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: var(--shadow);
     cursor: pointer;
     font-weight: bold;
-    font-size: 1.3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
+    font-size: 1.2rem;
 }
 
-.accessibility-panel button:hover, .control-btn:hover {
-    transform: scale(1.1);
-    background-color: var(--primary);
-    color: white;
-}
-
-/* IA/Chat e Quiz */
+/* IA e Quiz */
 .chat-bubble {
     background-color: var(--bg);
-    padding: 1.2rem;
-    border-radius: 18px;
+    padding: 1rem;
+    border-radius: 15px;
     margin-bottom: 1rem;
-    border-left: 6px solid var(--primary);
-    font-size: 0.95rem;
+    border-left: 5px solid var(--primary);
 }
 
 .quiz-item {
-    margin-bottom: 2rem;
-    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
     background: var(--bg);
-    border-radius: 15px;
-}
-
-/* Tabelas (Impacto) */
-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    margin: 2rem 0;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-}
-
-th {
-    background-color: var(--primary);
-    color: white;
-    padding: 15px;
-    text-align: left;
-}
-
-td {
-    padding: 15px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    background-color: var(--white);
-}
-
-.dark-mode td {
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-radius: 10px;
 }
 
 /* Footer */
 footer {
     background-color: var(--white);
-    padding: 4rem 5%;
+    padding: 3rem 5%;
     text-align: center;
-    margin-top: 5rem;
-    border-top: 1px solid rgba(0,0,0,0.05);
+    margin-top: 4rem;
+    border-top: 1px solid #eee;
 }
 
 @media (max-width: 768px) {
     .nav-links { display: none; }
-    .hero h1 { font-size: 2.2rem; }
-    .hero { padding: 4rem 5%; }
-    .grid { grid-template-columns: 1fr; }
+    .intro-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2rem; }
 }
