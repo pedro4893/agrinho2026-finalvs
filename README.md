@@ -56,8 +56,6 @@ ia.html: Hub interativo com IA e Quiz.
 •
 /img/: Pasta contendo as imagens otimizadas do projeto.
 
-📝 Critérios de 25 Pontos Atendidos
-
 •
 Identidade Visual: Design autoral, fugindo de modelos genéricos.
 
