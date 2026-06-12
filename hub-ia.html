@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interação | Projeto Agrinho</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Agro<span>Sustentável</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="inovacao.html">Inovação</a></li>
+                <li><a href="sustentabilidade.html">Sustentabilidade</a></li>
+                <li><a href="hub-ia.html">Interação</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h1>Central de Interação</h1>
+            <p>Converse com nosso assistente e teste seus conhecimentos.</p>
+        </div>
+
+        <div class="intro-grid">
+            <!-- Assistente Section -->
+            <section class="card" style="text-align: left;">
+                <h2>💬 Assistente Virtual</h2>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem;">Tire suas dúvidas sobre o agro sustentável em tempo real.</p>
+                
+                <div id="ai-output" style="height: 250px; overflow-y: auto; margin-bottom: 1rem; border: 1px solid #eee; padding: 10px; border-radius: 10px;">
+                    <div class="chat-bubble">
+                        Olá! Como posso te ajudar a entender melhor o futuro sustentável do campo?
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" id="ai-input" placeholder="Pergunte algo..." style="flex: 1; padding: 10px; border-radius: 20px; border: 1px solid #ccc;">
+                    <button onclick="perguntarAssistente()" class="btn">Enviar</button>
+                </div>
+            </section>
+
+            <!-- Quiz Section -->
+            <section class="card" style="text-align: left;">
+                <h2>🧠 Quiz Educativo</h2>
+                <div id="quiz-container"></div>
+            </section>
+        </div>
+    </main>
+
+    <div class="accessibility-panel">
+        <button id="toggle-dark" onclick="alternarModoEscuro()">🌙</button>
+        <button onclick="ajustarFonte(2)">A+</button>
+        <button onclick="ajustarFonte(-2)">A-</button>
+    </div>
+
+    <footer>
+        <p><strong>Concurso Agrinho 2026</strong> | 1ª Série do Ensino Médio</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('ai-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') perguntarAssistente();
+        });
+    </script>
+</body>
+</html>

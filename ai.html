@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA & Quiz | Projeto Agrinho</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Agro<span>Sustentável</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="tecnologia.html">Tecnologia</a></li>
+                <li><a href="preservacao.html">Sustentabilidade</a></li>
+                <li><a href="ia.html">IA & Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h1>Interatividade e Aprendizado</h1>
+            <p>Use as ferramentas abaixo para fixar o que você aprendeu sobre o agro sustentável.</p>
+        </div>
+
+        <div class="intro-grid">
+            <!-- IA Section -->
+            <section class="card" style="text-align: left;">
+                <h2>🤖 Pergunte à IA</h2>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem;">Nossa IA está programada com conceitos da Trilha de Programação e IA 2026.</p>
+                
+                <div id="ai-output" style="height: 250px; overflow-y: auto; margin-bottom: 1rem; border: 1px solid #eee; padding: 10px; border-radius: 10px;">
+                    <div class="chat-bubble">
+                        Olá! Eu sou a IA do Agrinho. O que você gostaria de saber sobre o futuro sustentável do campo?
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" id="ai-input" placeholder="Ex: O que é sustentabilidade?" style="flex: 1; padding: 10px; border-radius: 20px; border: 1px solid #ccc;">
+                    <button onclick="perguntarIA()" class="btn">Enviar</button>
+                </div>
+            </section>
+
+            <!-- Quiz Section -->
+            <section class="card" style="text-align: left;">
+                <h2>🧠 Desafio de Conhecimento</h2>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem;">Teste o que você sabe sobre as técnicas modernas do campo.</p>
+                
+                <div id="quiz-container">
+                    <!-- O JavaScript vai carregar o quiz aqui -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="accessibility-panel">
+        <button id="toggle-dark" onclick="alternarModoEscuro()">🌙</button>
+        <button onclick="ajustarFonte(2)">A+</button>
+        <button onclick="ajustarFonte(-2)">A-</button>
+    </div>
+
+    <footer>
+        <p><strong>Concurso Agrinho 2026</strong> | 1ª Série do Ensino Médio</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Permite enviar a pergunta com a tecla Enter
+        document.getElementById('ai-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') perguntarIA();
+        });
+    </script>
+</body>
+</html>
